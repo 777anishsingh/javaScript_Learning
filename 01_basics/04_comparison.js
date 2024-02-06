@@ -22,9 +22,3 @@
 
 // === strict check =>check values and its datatype
 console.log("2"===2);
-
-
-
-
-
-
