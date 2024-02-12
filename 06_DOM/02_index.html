@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur Code</title>
+</head>
+
+<body style="background-color: #212121; color: whitesmoke;">
+
+    <div class="parent">
+        <!-- comment -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    // console.log(parent); //-> div with class parent
+    // console.log(parent.children); //-> html collection
+    // console.log(parent.children[1].innerHTML); //->tuesday
+
+    for (let i = 0; i < parent.children.length; i++) {
+        // console.log(parent.children[i].innerHTML);
+    }
+    parent.children[1].style.color="orange" //->change styling
+    // console.log(parent.firstElementChild); // ***** To find first element *****
+    // console.log(parent.lastElementChild); // ***** To find last element *****
+
+    const daySelector = document.querySelector('.day') // -> move from child to parent
+    // console.log(daySelector);
+    // console.log(daySelector.parentElement);// -> *** (better approach) move from child to parent
+    // console.log(daySelector.nextElementSibling);
+
+    console.log("NODES: ",parent.childNodes);
+
+
+
+
+
+</script>
+
+</html>

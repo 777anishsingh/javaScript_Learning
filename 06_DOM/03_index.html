@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code</title>
+</head>
+
+<body style="background-color: #212121; color: whitesmoke;">
+
+</body>
+
+<script>
+    const div = document.createElement('div') // -> creats any element here its div
+    console.log(div);
+    div.className = "main-div"
+    div.id = Math.round(Math.random() * 10 + 1) // -> create random id
+    div.setAttribute("title", "title generate")
+    div.style.backgroundColor = "green"
+    div.style.padding = "15px"
+
+    // div.innerHTML = "Anish Singh Butola" // not preferred to instead below one is prefered to optimize the size
+    const addText = document.createTextNode("Anish Singh Butola")
+    div.append(addText)
+    document.body.appendChild(div) // -> append to main body
+</script>
+
+
+</html>
