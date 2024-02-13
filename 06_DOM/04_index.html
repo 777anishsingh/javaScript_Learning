@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chai Aur Code | DOM</title>
+</head>
+
+<body style="background-color: #212121; color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+
+<script> // Edit and remove DOM elements
+
+    /******************* less efficient Way *******************/
+    function addLanguage(langName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguage('Java')
+    addLanguage('Python')
+    addLanguage('REACT')
+
+    /******************* More efficient Way *******************/
+
+    function AddOptimizedLang(langName) {
+        const optimizedList = document.createElement('li')
+        optimizedList.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(optimizedList)
+    }
+    AddOptimizedLang('Go Lang')
+
+    /******************* EDIT *******************/
+    //way.1
+    const langEdit = document.querySelector('li:nth-child(3)') //***** NTH-CHILD PROPERTY *****
+    const newLi = document.createElement('li')
+    newLi.appendChild(document.createTextNode('Anish'))
+    langEdit.replaceWith(newLi) // to replace
+
+    //way.2
+    const langEdit2 = document.querySelector('li:first-child')
+    langEdit2.outerHTML = '<li>TypeScript</li>'
+
+    // //way.3
+    const langEdit3 = document.querySelector('li:nth-child(2)') //***** NTH-CHILD PROPERTY *****
+    langEdit3.innerHTML = "Rust" // we can also use .textContent
+
+    // //way.4
+    const langEdit4 = document.querySelector('li:nth-child(4)') //***** NTH-CHILD PROPERTY *****
+    const newLi4 = document.createElement('li')
+    newLi4.textContent = "Angular" // we can also use .innerHTML
+    langEdit4.replaceWith(newLi4) // to replace
+
+    /******************* REMOVE ELEMENT *******************/
+    const langRemove = document.querySelector('li:last-child')
+    langRemove.remove()
+
+</script>
+
+
+</html>
