@@ -1,4 +1,4 @@
-// ************************************* FILTERS *************************************
+// ************************************* REDUCE *************************************
 
 const myNums = [1, 2, 3]
 
@@ -6,10 +6,10 @@ const myNums = [1, 2, 3]
 // const myTotal = myNums.reduce(function (acc, currVal) {
 //     console.log(`accumilator: ${acc}, current value: ${currVal}`);
 //     return acc + currVal
-// }, 0)
+// }, 0) // -> this 0 is for the showing the accum. from where to start
 
 //2 way -> using arrow func
-const myTotal = myNums.reduce((acc, currVal) => (acc + currVal), 0)
+// const myTotal = myNums.reduce((acc, currVal) => (acc + currVal), 0)
 
 // console.log(myTotal);
 
