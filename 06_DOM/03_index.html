@@ -14,16 +14,17 @@
 <script>
     const div = document.createElement('div') // -> creats any element here its div
     console.log(div);
+    document.body.appendChild(div) // -> append to main body
     div.className = "main-div"
     div.id = Math.round(Math.random() * 10 + 1) // -> create random id
     div.setAttribute("title", "title generate")
     div.style.backgroundColor = "green"
     div.style.padding = "15px"
 
-    // div.innerHTML = "Anish Singh Butola" // not preferred to instead below one is prefered to optimize the size
-    const addText = document.createTextNode("Anish Singh Butola")
+    // div.textContent = "Anish Singh Butola" // not preferred to instead below one is prefered to optimize the size
+    const addText = document.createTextNode("Anish Singh Butola") // first create textNode and then append it to main div
     div.append(addText)
-    document.body.appendChild(div) // -> append to main body
+    
 </script>
 
 

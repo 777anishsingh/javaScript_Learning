@@ -13,7 +13,7 @@
 
 <script> // Edit and remove DOM elements
 
-    /******************* less efficient Way *******************/
+    // /******************* less efficient Way *******************/
     function addLanguage(langName) {
         const li = document.createElement('li')
         li.innerHTML = `${langName}`
@@ -24,41 +24,41 @@
     addLanguage('Python')
     addLanguage('REACT')
 
-    /******************* More efficient Way *******************/
+    // /******************* More efficient Way *******************/
 
     function AddOptimizedLang(langName) {
         const optimizedList = document.createElement('li')
-        optimizedList.appendChild(document.createTextNode(langName))
-        document.querySelector('.language').appendChild(optimizedList)
+        optimizedList.appendChild(document.createTextNode(langName)) // by creating a textnode and appending it to the created list
+        document.querySelector('.language').appendChild(optimizedList) // appending the created list tot he main list
     }
     AddOptimizedLang('Go Lang')
 
-    /******************* EDIT *******************/
-    //way.1
+    // /******************* EDIT *******************/
+    // //way.1
     const langEdit = document.querySelector('li:nth-child(3)') //***** NTH-CHILD PROPERTY *****
     const newLi = document.createElement('li')
     newLi.appendChild(document.createTextNode('Anish'))
     langEdit.replaceWith(newLi) // to replace
 
-    //way.2
+    // //way.2
     const langEdit2 = document.querySelector('li:first-child')
     langEdit2.outerHTML = '<li>TypeScript</li>'
 
-    // //way.3
+    // // //way.3
     const langEdit3 = document.querySelector('li:nth-child(2)') //***** NTH-CHILD PROPERTY *****
     langEdit3.innerHTML = "Rust" // we can also use .textContent
 
-    // //way.4
+    // // //way.4
     const langEdit4 = document.querySelector('li:nth-child(4)') //***** NTH-CHILD PROPERTY *****
     const newLi4 = document.createElement('li')
     newLi4.textContent = "Angular" // we can also use .innerHTML
     langEdit4.replaceWith(newLi4) // to replace
 
-    /******************* REMOVE ELEMENT *******************/
+    // /******************* REMOVE ELEMENT *******************/
     const langRemove = document.querySelector('li:last-child')
     langRemove.remove()
 
-</script>
+</script> 
 
 
 </html>
