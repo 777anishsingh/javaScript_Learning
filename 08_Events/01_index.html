@@ -31,7 +31,7 @@
     </div>
 </body>
 
-// Js is usually a sqwuentially executed language but can be manipulated
+<!-- // Js is usually a sqwuentially executed language but can be manipulated -->
 <script>
     //1. Directly writin onclick event in html, les reliable when scaling the system in JS
 
@@ -44,9 +44,50 @@
     //4. jQuery - On
 
     //5.Using EventListenrs -> Best method
-    document.querySelector('#owl').addEventListener('click', (eventObject) => {
-        console.log(eventObject);
-    }, false) //by default third parameter is false and therefore we usually dont write it
+    // document.querySelector('#owl').addEventListener('click', (eventObject) => {
+    //     console.log(eventObject);
+    // }, false) //by default third parameter is false and therefore we usually dont write it
+
+    // -------------------------------------------- WHAT TO LEARN ABOUT --------------------------------------------
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    //clientX, clientY, screenX, screenY
+    //altKey, ctrlKey, shiftKey, keyCode
+
+    // ------------------------- Event Propogation -> Bubling up -------------------------
+    // document.querySelector('#images').addEventListener('click', (eventObject) => {
+    //     // console.log('Click Inside the ul');
+    // }, false)
+
+    // document.querySelector('#owl').addEventListener('click', (eventObject) => {
+    //     // console.log('Clicked owl');
+    //     eventObject.stopPropagation(); //-> Stops the bubbling up of the element is we want to stop
+    // }, false)
+
+    document.getElementById('google').addEventListener('click', (eventObject) => {
+        eventObject.preventDefault(); // prevent default behaviour click opening new link on clicking on it
+        eventObject.stopPropagation();
+        // console.log('Google clicked');
+    }, false)
+
+    // --------------------------------------------------------------- MINI PROJECT -> (ON CLICKING ON IMAGE IT SHOULD DISAPPEAR) ---------------------------------------------------------------
+    
+    const image = document.querySelector('#images').addEventListener
+        ('click', (e) => {
+            console.log(e.target.tagName);
+
+            if (e.target.tagName === 'IMG') {
+                console.log(e.target.id);
+                let removeIt = e.target.parentNode
+                // **** to remove item we can use
+                // 1. remove() method
+                removeIt.remove()
+
+                //2. using different approach
+                // removeIt.parentNode.removeChild(removeIt)
+            }
+
+        }, false)
 
 </script>
 
