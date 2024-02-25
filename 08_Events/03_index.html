@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Anish Singh Butola</h1>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+
+    //1. setTimeOut -> to perform a particular task after a particalr time period once
+    const Anish = () => {
+        console.log('Anish Singh Butola');
+
+    }
+    const changeText = () => {
+        document.querySelector('h1').textContent = 'Best JS Series'
+    }
+    const changeMe = setTimeout(changeText, 2000) // function refernce, time in ms
+
+    //2. clearTimeOut -> To remove settimeout in case of any failure
+    document.querySelector('#stop').addEventListener(
+        'click', () => {
+            clearTimeout(changeMe) //-> Now if we click on button the settimeout will not work
+            console.log('STOPPED');
+        }
+    )
+
+
+</script>
+
+</html>
