@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="just to read about the XMLHttpRequest properties"
+        style="background-color: #212121;display: flex; justify-content: center;align-items: center; text-align: center;height: 100vh;">
+        <table style="background-color:rgb(172, 198, 199);border: 1px solid black">
+            <tr>
+                <td style="border: 1px solid black">VALUE</td>
+                <td style="border: 1px solid black">STATE</td>
+                <td style="border: 1px solid black">DESCRIPTION</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black">0</td>
+                <td style="border: 1px solid black">UNSENT</td>
+                <td style="border: 1px solid black">Client has been created. open() not called yet.</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black">1</td>
+                <td style="border: 1px solid black">OPENED</td>
+                <td style="border: 1px solid black">open() has been called.</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black">2</td>
+                <td style="border: 1px solid black">HEADERS_RECEIVED</td>
+                <td style="border: 1px solid black">send() has been called, and headers and status are available.</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black">3</td>
+                <td style="border: 1px solid black">LOADING</td>
+                <td style="border: 1px solid black">Downloading; responseText holds partial data.</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black">4</td>
+                <td style="border: 1px solid black">DONE</td>
+                <td style="border: 1px solid black">The operation is complete.</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script>
+    const requestUrl = 'https://api.github.com/users/777anishsingh'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl); //-> open is not called by itself it is called by.send()
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+
+        if (xhr.readyState === 4) {
+            // const data = this.responseText;
+            // console.log(typeof data); //-> o/p = string
+            // console.log(data.followers); //-> will not work because mostly data we get is in form of string
+
+            const data = JSON.parse(this.responseText);
+            console.log(typeof data);
+            console.log(data.id);
+        }
+    }
+    xhr.send();
+</script>
+
+</html>
