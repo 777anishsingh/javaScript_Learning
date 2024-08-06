@@ -15,7 +15,7 @@ let dateToday = new Date();
 // let myDate = new Date(2023,0,23,5,3)
 
 // let myDate = new Date("2003-02-14") // yyyy-mm-dd
-let myDate = new Date("02-14-2003")
+// let myDate = new Date("02-14-2003")
 // console.log(myDate.toLocaleString());
 
 //++++++++++ TIME STAMPS +++++++++++++
@@ -29,10 +29,11 @@ let timeStamp = Date.now()
 let newDate = new Date()
 // console.log(newDate.getMinutes());
 
-var dateSet = newDate.toLocaleString('default',{
+var dateSet = newDate.toLocaleString('default',{ //-->('to which international system data needs to be',  {object values} )
     weekday: "short",
+    era: "long"
 })
 
-console.log(dateSet);
+// console.log(dateSet);
 
 

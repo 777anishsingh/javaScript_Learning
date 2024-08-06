@@ -9,7 +9,7 @@
 
 
 //************* CONVERSIONS THAT WE USUALLY DONT PREFFER ***************/
-// console.log(null > 0);
+// console.log(null < 0);
 // console.log(null == 0);
 // console.log(null >= 0); 
 
@@ -21,4 +21,4 @@
 // console.log(undefined != 0);
 
 // === strict check =>check values and its datatype
-console.log("2"===2);
+// console.log("2"===2);

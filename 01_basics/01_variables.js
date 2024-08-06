@@ -10,7 +10,6 @@ because of issue in block scope and functional scope
 */
 
 // accountId = 2 // not allowed for const
-
 accountEmail = "77anish.singh@gmail.com"
 accountPassword = "2122121"
 accountCity = "Panchkuala"
